@@ -1,0 +1,54 @@
+// app/build.gradle
+
+// 1. Bloque de plugins (reemplaza 'apply plugin' si lo tenías)
+plugins {
+	id 'com.android.application'
+	// Si usas Kotlin, añade esta línea. Si no, puedes borrarla.
+	id 'org.jetbrains.kotlin.android'
+}
+
+android {
+	// 2. Namespace (obligatorio en plugins recientes)
+	namespace 'com.sriyank.transitionanimations' // Puedes cambiar "com.example.transitionanimation" por el nombre de tu paquete si es diferente
+
+	// 3. Versiones de SDK
+	compileSdk 33 // Usa una versión reciente del SDK
+
+	defaultConfig {
+		applicationId "com.sriyank.transitionanimations" // Asegúrate de que coincida con tu paquete
+		minSdk 21
+		targetSdk 33
+		versionCode 1
+		versionName "1.0"
+
+		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+	}
+
+	// 4. Configuración de compilación
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+	}
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_1_8
+		targetCompatibility JavaVersion.VERSION_1_8
+	}
+	// Si usas Kotlin:
+	kotlinOptions {
+		jvmTarget = '1.8'
+	}
+}
+
+// 5. Dependencias (reemplaza las que tuvieras)
+dependencies {
+	implementation 'androidx.core:core-ktx:1.9.0'
+	implementation 'androidx.appcompat:appcompat:1.6.1'
+	implementation 'com.google.android.material:material:1.8.0'
+	implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+	implementation 'de.hdodenhof:circleimageview:3.1.0'
+	testImplementation 'junit:junit:4.13.2'
+	androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+	androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

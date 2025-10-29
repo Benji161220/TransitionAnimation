@@ -1,0 +1,21 @@
+// settings.gradle
+
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        // Si alguna librería MUY antigua solo estaba en jcenter, podrías necesitar un reemplazo.
+        // Por ahora, google() y mavenCentral() cubren casi todo.
+    }
+}
+
+rootProject.name = "TransitionAnimation"
+include ':app'
+    
