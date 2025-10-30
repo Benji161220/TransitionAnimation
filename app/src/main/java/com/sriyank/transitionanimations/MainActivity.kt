@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 		currentScene = scene1
 
 		// Step 2: Create a Transition object to define what type of animation you want
-//		transition = TransitionInflater.from(this).inflateTransition(R.transition.example_2)
+		transition = TransitionInflater.from(this).inflateTransition(R.transition.example_4)
 
 		val cbTransition = ChangeBounds()
 		cbTransition.duration = 500
@@ -55,10 +55,10 @@ class MainActivity : AppCompatActivity() {
 		// Step 3: Call TransitionManager.go() to run animation
 
 		currentScene = if (currentScene === scene1) {
-			TransitionManager.go(scene2, transitionSet)
+			TransitionManager.go(scene2, transition) //Para usar la transición por codigo solo hay que cambiar el transition por transitionSet
 			scene2
 		} else {
-			TransitionManager.go(scene1, transitionSet)
+			TransitionManager.go(scene1, transition)
 			scene1
 		}
 	}
